@@ -38,29 +38,33 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <SiteShell>
-      <article className="mx-auto max-w-3xl px-5 py-16">
+      <article className="mx-auto max-w-4xl px-5 py-16">
         <Link
           href="/blog"
-          className="text-sm font-semibold text-[#57705f] hover:text-[#17201b]"
+          className="text-sm font-black uppercase text-[#5c4b35] hover:text-[#111310]"
         >
           Back to blog
         </Link>
 
-        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-[#57705f]">
+        <p className="mt-10 text-sm font-black uppercase text-[#5c4b35]">
           {post.category} / {post.date}
         </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-[#17201b] sm:text-5xl">
+        <h1 className="mt-4 text-5xl font-black uppercase leading-none text-[#111310] sm:text-7xl">
           {post.title}
         </h1>
-        <p className="mt-6 text-xl leading-9 text-[#526058]">{post.summary}</p>
+        <p className="mt-8 max-w-3xl text-xl leading-9 text-[var(--ink-soft)]">
+          {post.summary}
+        </p>
 
-        <div className="mt-12 space-y-10">
+        <div className="mt-14 space-y-10 border-t border-[#111310] pt-8">
           {post.sections.map((section) => (
             <section key={section.heading}>
-              <h2 className="text-2xl font-semibold text-[#17201b]">
+              <h2 className="text-3xl font-black uppercase text-[#111310]">
                 {section.heading}
               </h2>
-              <p className="mt-4 leading-8 text-[#526058]">{section.body}</p>
+              <p className="mt-4 leading-8 text-[var(--ink-soft)]">
+                {section.body}
+              </p>
             </section>
           ))}
         </div>

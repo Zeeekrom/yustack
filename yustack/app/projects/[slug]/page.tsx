@@ -38,21 +38,21 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
   return (
     <SiteShell>
-      <article className="mx-auto max-w-4xl px-5 py-16">
+      <article className="mx-auto max-w-5xl px-5 py-16">
         <Link
           href="/projects"
-          className="text-sm font-semibold text-[#57705f] hover:text-[#17201b]"
+          className="text-sm font-black uppercase text-[#5c4b35] hover:text-[#111310]"
         >
           Back to projects
         </Link>
 
-        <p className="mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-[#57705f]">
+        <p className="mt-10 text-sm font-black uppercase text-[#5c4b35]">
           {project.type}
         </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-[#17201b] sm:text-6xl">
+        <h1 className="mt-4 text-6xl font-black uppercase leading-none text-[#111310] sm:text-8xl">
           {project.title}
         </h1>
-        <p className="mt-6 text-xl leading-9 text-[#526058]">
+        <p className="mt-8 max-w-3xl text-xl leading-9 text-[var(--ink-soft)]">
           {project.description}
         </p>
 
@@ -60,17 +60,19 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           {project.stack.map((item) => (
             <span
               key={item}
-              className="rounded-full border border-black/10 bg-white px-3 py-2 text-sm text-[#38443e]"
+              className="border border-[var(--line)] bg-[#fffdf5] px-3 py-2 text-sm font-semibold text-[#33382f]"
             >
               {item}
             </span>
           ))}
         </div>
 
-        <section className="mt-12 grid gap-8 md:grid-cols-2">
+        <section className="mt-14 grid gap-8 border-t border-[#111310] pt-8 md:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-semibold text-[#17201b]">Outcomes</h2>
-            <ul className="mt-5 space-y-4 text-[#526058]">
+            <h2 className="text-3xl font-black uppercase text-[#111310]">
+              Outcomes
+            </h2>
+            <ul className="mt-5 space-y-4 text-[var(--ink-soft)]">
               {project.outcomes.map((item) => (
                 <li key={item} className="leading-7">
                   {item}
@@ -79,11 +81,11 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             </ul>
           </div>
 
-          <div className="rounded-lg bg-white p-6">
-            <h2 className="text-2xl font-semibold text-[#17201b]">
+          <div className="border border-[var(--line)] bg-[#fffdf5] p-6">
+            <h2 className="text-3xl font-black uppercase text-[#111310]">
               Next Steps
             </h2>
-            <ul className="mt-5 space-y-4 text-[#526058]">
+            <ul className="mt-5 space-y-4 text-[var(--ink-soft)]">
               {project.nextSteps.map((item) => (
                 <li key={item} className="leading-7">
                   {item}

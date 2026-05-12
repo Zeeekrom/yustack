@@ -5,79 +5,88 @@ import { projects, posts, stack } from "@/lib/site-data";
 export default function Home() {
   return (
     <SiteShell>
-      <section className="mx-auto grid max-w-6xl gap-10 px-5 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:py-24">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#57705f]">
+      <section className="relative mx-auto grid max-w-7xl gap-10 px-5 py-12 lg:grid-cols-[1.25fr_0.75fr] lg:py-20">
+        <div className="reveal">
+          <p className="text-sm font-black uppercase text-[#5c4b35]">
             Personal Technical Platform
           </p>
-          <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight text-[#17201b] sm:text-6xl">
-            Yuxiang Huang builds software, AI, and interactive systems.
+          <h1 className="mt-5 max-w-5xl text-7xl font-black uppercase leading-none text-[#111310] sm:text-8xl lg:text-9xl">
+            Software AI Systems
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#526058]">
-            YuStack is a portfolio, technical blog, project lab, and future API
-            platform for full-stack engineering, cloud deployment, data
-            dashboards, and AI demos.
+          <p className="mt-8 max-w-2xl text-xl leading-8 text-[var(--ink-soft)]">
+            YuStack is Yuxiang Huang&apos;s personal technical platform: part
+            portfolio, part engineering journal, part AI and cloud lab.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/projects"
-              className="rounded-full bg-[#17201b] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#2d4035]"
+              className="border border-[#111310] bg-[#111310] px-5 py-3 text-sm font-black uppercase text-[#f2efe6] transition hover:-translate-y-1 hover:bg-[var(--clay)] hover:text-[#111310]"
             >
               View Projects
             </Link>
             <Link
               href="/blog"
-              className="rounded-full border border-black/15 bg-white/60 px-5 py-3 text-sm font-semibold text-[#17201b] transition hover:bg-white"
+              className="border border-[#111310] bg-[var(--acid)] px-5 py-3 text-sm font-black uppercase text-[#111310] transition hover:-translate-y-1 hover:bg-[#fffdf5]"
             >
               Read Blog
             </Link>
           </div>
         </div>
 
-        <div className="border-l border-black/10 pl-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#57705f]">
+        <div className="reveal border-l border-[var(--line)] pl-6 lg:pt-16">
+          <p className="text-sm font-black uppercase text-[#5c4b35]">
             Phase 1 Stack
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             {stack.slice(0, 6).map((item) => (
               <span
                 key={item}
-                className="rounded-full border border-black/10 bg-white/70 px-3 py-2 text-sm text-[#38443e]"
+                className="border border-[var(--line)] bg-[#fffdf5] px-3 py-2 text-sm font-semibold text-[#33382f]"
               >
                 {item}
               </span>
             ))}
           </div>
-          <div className="mt-8 space-y-4">
-            <div>
-              <p className="text-3xl font-semibold text-[#17201b]">5</p>
-              <p className="text-sm text-[#526058]">core portfolio projects</p>
+          <div className="mt-10 grid grid-cols-3 gap-3 lg:grid-cols-1">
+            <div className="border-t border-[#111310] pt-4">
+              <p className="text-5xl font-black text-[#111310]">5</p>
+              <p className="text-sm text-[var(--ink-soft)]">core projects</p>
             </div>
-            <div>
-              <p className="text-3xl font-semibold text-[#17201b]">3</p>
-              <p className="text-sm text-[#526058]">planned build phases</p>
+            <div className="border-t border-[#111310] pt-4">
+              <p className="text-5xl font-black text-[#111310]">3</p>
+              <p className="text-sm text-[var(--ink-soft)]">build phases</p>
             </div>
-            <div>
-              <p className="text-3xl font-semibold text-[#17201b]">1</p>
-              <p className="text-sm text-[#526058]">coherent technical story</p>
+            <div className="border-t border-[#111310] pt-4">
+              <p className="text-5xl font-black text-[#111310]">1</p>
+              <p className="text-sm text-[var(--ink-soft)]">career story</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-black/10 bg-white/45">
-        <div className="mx-auto grid max-w-6xl gap-6 px-5 py-12 md:grid-cols-3">
+      <section className="border-y border-[#111310] bg-[var(--acid)] py-4">
+        <div className="marquee-track flex w-max gap-8 whitespace-nowrap text-3xl font-black uppercase text-[#111310] sm:text-5xl">
+          {[...stack, ...stack].map((item, index) => (
+            <span key={`${item}-${index}`}>{item}</span>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-b border-[var(--line)] bg-[#fffdf5]">
+        <div className="mx-auto grid max-w-7xl gap-0 px-5 py-0 md:grid-cols-3">
           {projects.slice(0, 3).map((project) => (
             <Link
               key={project.title}
               href={`/projects/${project.slug}`}
-              className="rounded-lg bg-white p-5 transition hover:-translate-y-1 hover:shadow-sm"
+              className="group min-h-80 border-x border-[var(--line)] p-6 transition hover:bg-[#111310] hover:text-[#f2efe6]"
             >
-              <p className="text-sm font-medium text-[#57705f]">
+              <p className="text-sm font-black uppercase text-[#5c4b35] group-hover:text-[var(--acid)]">
                 {project.type}
               </p>
-              <h2 className="mt-3 text-xl font-semibold">{project.title}</h2>
-              <p className="mt-3 text-sm leading-6 text-[#526058]">
+              <h2 className="mt-20 text-4xl font-black uppercase leading-none">
+                {project.title}
+              </h2>
+              <p className="mt-5 text-sm leading-6 text-[var(--ink-soft)] group-hover:text-[#d6d0c2]">
                 {project.description}
               </p>
             </Link>
@@ -85,25 +94,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="mx-auto max-w-7xl px-5 py-16">
         <SectionHeading
           eyebrow="Latest Notes"
-          title="Build logs that turn the project into evidence."
+          title="Build logs as proof of work."
         >
           The blog will document decisions, architecture, deployment, and AI
           experiments so recruiters can see how the system grows.
         </SectionHeading>
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="mt-10 grid border-t border-[#111310]">
           {posts.map((post) => (
             <Link
               key={post.title}
               href={`/blog/${post.slug}`}
-              className="border-t border-black/10 pt-5 transition hover:border-[#57705f]"
+              className="group grid gap-4 border-b border-[var(--line)] py-6 transition hover:bg-[#111310] hover:px-5 hover:text-[#f2efe6] md:grid-cols-[220px_1fr_120px]"
             >
-              <p className="text-sm text-[#57705f]">{post.category}</p>
-              <h2 className="mt-2 text-lg font-semibold">{post.title}</h2>
-              <p className="mt-3 text-sm leading-6 text-[#526058]">
-                {post.summary}
+              <p className="text-sm font-black uppercase text-[#5c4b35] group-hover:text-[var(--acid)]">
+                {post.category}
+              </p>
+              <div>
+                <h2 className="text-2xl font-black uppercase">{post.title}</h2>
+                <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)] group-hover:text-[#d6d0c2]">
+                  {post.summary}
+                </p>
+              </div>
+              <p className="text-sm font-semibold text-[var(--ink-soft)] group-hover:text-[#f2efe6]">
+                {post.date}
               </p>
             </Link>
           ))}

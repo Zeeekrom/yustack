@@ -5,33 +5,38 @@ import Link from "next/link";
 export default function ProjectsPage() {
   return (
     <SiteShell>
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="mx-auto max-w-7xl px-5 py-16">
         <SectionHeading
           eyebrow="Projects"
-          title="A portfolio shaped around AI, systems, and interaction."
+          title="Selected technical exhibits."
         >
           These projects are selected to support one clear career narrative:
           full-stack engineering with AI and cloud-ready product thinking.
         </SectionHeading>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {projects.map((project) => (
+        <div className="mt-12 border-t border-[#111310]">
+          {projects.map((project, index) => (
             <Link
               key={project.title}
               href={`/projects/${project.slug}`}
-              className="rounded-lg bg-white p-6 transition hover:-translate-y-1 hover:shadow-sm"
+              className="group grid gap-6 border-b border-[var(--line)] py-8 transition hover:bg-[#111310] hover:px-5 hover:text-[#f2efe6] lg:grid-cols-[120px_1fr_1.2fr]"
             >
-              <p className="text-sm font-medium text-[#57705f]">
-                {project.type}
+              <p className="text-5xl font-black text-[#111310] group-hover:text-[var(--acid)]">
+                {String(index + 1).padStart(2, "0")}
               </p>
-              <h2 className="mt-3 text-2xl font-semibold text-[#17201b]">
+              <div>
+                <p className="text-sm font-black uppercase text-[#5c4b35] group-hover:text-[var(--acid)]">
+                  {project.type}
+                </p>
+                <p className="mt-5 text-sm leading-6 text-[var(--ink-soft)] group-hover:text-[#d6d0c2]">
+                  {project.signal}
+                </p>
+              </div>
+              <h2 className="text-4xl font-black uppercase leading-none text-[#111310] group-hover:text-[#f2efe6] sm:text-6xl">
                 {project.title}
               </h2>
-              <p className="mt-4 leading-7 text-[#526058]">
+              <p className="lg:col-start-3 leading-7 text-[var(--ink-soft)] group-hover:text-[#d6d0c2]">
                 {project.description}
-              </p>
-              <p className="mt-5 border-t border-black/10 pt-4 text-sm font-medium text-[#2f4438]">
-                {project.signal}
               </p>
             </Link>
           ))}

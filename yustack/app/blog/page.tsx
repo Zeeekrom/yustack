@@ -5,34 +5,38 @@ import Link from "next/link";
 export default function BlogPage() {
   return (
     <SiteShell>
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="mx-auto max-w-7xl px-5 py-16">
         <SectionHeading
           eyebrow="Blog"
-          title="Technical writing for the build journey."
+          title="Field notes from the build."
         >
           Phase 1 uses structured post metadata first. MDX can be added after
           the main site is deployed.
         </SectionHeading>
 
-        <div className="mt-10 space-y-4">
-          {posts.map((post) => (
+        <div className="mt-12 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
+          {posts.map((post, index) => (
             <Link
               key={post.title}
               href={`/blog/${post.slug}`}
-              className="grid gap-4 rounded-lg bg-white p-6 md:grid-cols-[180px_1fr]"
+              className={`group border border-[var(--line)] bg-[#fffdf5] p-6 transition hover:-translate-y-1 hover:bg-[#111310] hover:text-[#f2efe6] ${
+                index === 0 ? "lg:row-span-2" : ""
+              }`}
             >
-              <div>
-                <p className="text-sm font-medium text-[#57705f]">
+              <div className="flex items-start justify-between gap-5">
+                <p className="text-sm font-black uppercase text-[#5c4b35] group-hover:text-[var(--acid)]">
                   {post.category}
                 </p>
-                <p className="mt-2 text-sm text-[#69746e]">{post.date}</p>
+                <p className="text-sm text-[var(--ink-soft)] group-hover:text-[#d6d0c2]">
+                  {post.date}
+                </p>
               </div>
-              <div>
-                <h2 className="text-2xl font-semibold text-[#17201b]">
-                  {post.title}
-                </h2>
-                <p className="mt-3 leading-7 text-[#526058]">{post.summary}</p>
-              </div>
+              <h2 className="mt-16 text-4xl font-black uppercase leading-none text-[#111310] group-hover:text-[#f2efe6] sm:text-6xl">
+                {post.title}
+              </h2>
+              <p className="mt-6 leading-7 text-[var(--ink-soft)] group-hover:text-[#d6d0c2]">
+                {post.summary}
+              </p>
             </Link>
           ))}
         </div>
