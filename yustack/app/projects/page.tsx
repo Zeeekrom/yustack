@@ -8,10 +8,10 @@ export default function ProjectsPage() {
       <section className="mx-auto max-w-7xl px-5 py-16">
         <SectionHeading
           eyebrow="Projects"
-          title="Selected technical exhibits."
+          title="LinkedIn-aligned technical projects."
         >
-          These projects are selected to support one clear career narrative:
-          full-stack engineering with AI and cloud-ready product thinking.
+          Project work across game production, multi-agent simulation, financial
+          education, UE5, AIGC workflows, and project management.
         </SectionHeading>
 
         <div className="mt-12 border-t border-[#111310]">

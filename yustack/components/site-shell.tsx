@@ -2,8 +2,9 @@ import Link from "next/link";
 
 const navItems = [
   { href: "/", label: "Home" },
+  { href: "/experience", label: "Experience" },
   { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Research" },
   { href: "/roadmap", label: "Roadmap" },
   { href: "/about", label: "About" },
 ];
@@ -41,8 +42,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             </p>
           </div>
           <p className="max-w-sm text-sm leading-6 text-[#d6d0c2]">
-            A personal technical platform built in public with Next.js,
-            TypeScript, and a staged full-stack roadmap.
+            Evan Huang&apos;s public portfolio for IT, data, AI, AIGC
+            workflows, and interactive systems.
           </p>
         </div>
       </footer>

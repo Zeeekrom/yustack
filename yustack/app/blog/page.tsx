@@ -7,11 +7,11 @@ export default function BlogPage() {
     <SiteShell>
       <section className="mx-auto max-w-7xl px-5 py-16">
         <SectionHeading
-          eyebrow="Blog"
-          title="Field notes from the build."
+          eyebrow="Research"
+          title="Publications and patents."
         >
-          Phase 1 uses structured post metadata first. MDX can be added after
-          the main site is deployed.
+          Research and intellectual property from the LinkedIn profile, grouped
+          as portfolio evidence for analytics, machine learning, and IoT work.
         </SectionHeading>
 
         <div className="mt-12 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">

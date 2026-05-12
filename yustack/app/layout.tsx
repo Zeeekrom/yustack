@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "YuStack | Software, AI, and Systems",
+  title: "Evan Huang | IT, Data, AI, and Interactive Systems",
   description:
-    "A personal technical platform for full-stack engineering, AI experiments, cloud projects, and interactive systems.",
+    "Evan Huang's portfolio for IT support, data analytics, AIGC workflows, game systems, full-stack engineering, and interactive content.",
 };
 
 export default function RootLayout({

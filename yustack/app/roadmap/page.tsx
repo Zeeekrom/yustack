@@ -7,10 +7,11 @@ export default function RoadmapPage() {
       <section className="mx-auto max-w-7xl px-5 py-16">
         <SectionHeading
           eyebrow="Roadmap"
-          title="A staged build plan for a real technical platform."
+          title="A 2026 direction for IT, data, AI, and interactive systems."
         >
-          YuStack grows in phases so the project can ship early, stay visible,
-          and gradually add full-stack, AI, cloud, data, and DevOps depth.
+          A LinkedIn-aligned roadmap connecting the University of Tasmania MITS
+          program, industry experience, portfolio case studies, and future AI
+          data products.
         </SectionHeading>
 
         <div className="mt-12 border-t border-[#111310]">

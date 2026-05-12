@@ -6,12 +6,17 @@ const siteUrl =
   "https://yustack.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/projects", "/blog", "/roadmap", "/about"].map(
-    (path) => ({
-      url: `${siteUrl}${path}`,
-      lastModified: new Date(),
-    }),
-  );
+  const staticRoutes = [
+    "",
+    "/experience",
+    "/projects",
+    "/blog",
+    "/roadmap",
+    "/about",
+  ].map((path) => ({
+    url: `${siteUrl}${path}`,
+    lastModified: new Date(),
+  }));
 
   const projectRoutes = projects.map((project) => ({
     url: `${siteUrl}/projects/${project.slug}`,

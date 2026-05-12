@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SectionHeading, SiteShell } from "@/components/site-shell";
-import { projects, posts, stack } from "@/lib/site-data";
+import { experiences, posts, profile, stack } from "@/lib/site-data";
 
 export default function Home() {
   return (
@@ -8,37 +8,38 @@ export default function Home() {
       <section className="relative mx-auto grid max-w-7xl gap-10 px-5 py-12 lg:grid-cols-[1.25fr_0.75fr] lg:py-20">
         <div className="reveal">
           <p className="text-sm font-black uppercase text-[#5c4b35]">
-            Personal Technical Platform
+            {profile.name} / Portfolio
           </p>
           <h1 className="mt-5 max-w-5xl text-7xl font-black uppercase leading-none text-[#111310] sm:text-8xl lg:text-9xl">
-            Software AI Systems
+            IT Data AI Systems
           </h1>
           <p className="mt-8 max-w-2xl text-xl leading-8 text-[var(--ink-soft)]">
-            YuStack is Yuxiang Huang&apos;s personal technical platform: part
-            portfolio, part engineering journal, part AI and cloud lab.
+            {profile.summary} Built from real experience across Tencent,
+            Lilith Games, Perfect World, CLAW, startups, research, and
+            interactive AI systems.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/projects"
+              href="/experience"
               className="border border-[#111310] bg-[#111310] px-5 py-3 text-sm font-black uppercase text-[#f2efe6] transition hover:-translate-y-1 hover:bg-[var(--clay)] hover:text-[#111310]"
             >
-              View Projects
+              View Experience
             </Link>
             <Link
-              href="/blog"
+              href="/projects"
               className="border border-[#111310] bg-[var(--acid)] px-5 py-3 text-sm font-black uppercase text-[#111310] transition hover:-translate-y-1 hover:bg-[#fffdf5]"
             >
-              Read Blog
+              View Projects
             </Link>
           </div>
         </div>
 
         <div className="reveal border-l border-[var(--line)] pl-6 lg:pt-16">
           <p className="text-sm font-black uppercase text-[#5c4b35]">
-            Phase 1 Stack
+            LinkedIn Signal
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
-            {stack.slice(0, 6).map((item) => (
+            {stack.slice(0, 8).map((item) => (
               <span
                 key={item}
                 className="border border-[var(--line)] bg-[#fffdf5] px-3 py-2 text-sm font-semibold text-[#33382f]"
@@ -49,16 +50,16 @@ export default function Home() {
           </div>
           <div className="mt-10 grid grid-cols-3 gap-3 lg:grid-cols-1">
             <div className="border-t border-[#111310] pt-4">
-              <p className="text-5xl font-black text-[#111310]">5</p>
-              <p className="text-sm text-[var(--ink-soft)]">core projects</p>
+              <p className="text-5xl font-black text-[#111310]">6</p>
+              <p className="text-sm text-[var(--ink-soft)]">industry roles</p>
             </div>
             <div className="border-t border-[#111310] pt-4">
-              <p className="text-5xl font-black text-[#111310]">3</p>
-              <p className="text-sm text-[var(--ink-soft)]">build phases</p>
+              <p className="text-5xl font-black text-[#111310]">4</p>
+              <p className="text-sm text-[var(--ink-soft)]">portfolio projects</p>
             </div>
             <div className="border-t border-[#111310] pt-4">
-              <p className="text-5xl font-black text-[#111310]">1</p>
-              <p className="text-sm text-[var(--ink-soft)]">career story</p>
+              <p className="text-5xl font-black text-[#111310]">2</p>
+              <p className="text-sm text-[var(--ink-soft)]">research assets</p>
             </div>
           </div>
         </div>
@@ -74,20 +75,20 @@ export default function Home() {
 
       <section className="border-b border-[var(--line)] bg-[#fffdf5]">
         <div className="mx-auto grid max-w-7xl gap-0 px-5 py-0 md:grid-cols-3">
-          {projects.slice(0, 3).map((project) => (
+          {experiences.slice(0, 3).map((experience) => (
             <Link
-              key={project.title}
-              href={`/projects/${project.slug}`}
+              key={experience.slug}
+              href="/experience"
               className="group min-h-80 border-x border-[var(--line)] p-6 transition hover:bg-[#111310] hover:text-[#f2efe6]"
             >
               <p className="text-sm font-black uppercase text-[#5c4b35] group-hover:text-[var(--acid)]">
-                {project.type}
+                {experience.company}
               </p>
               <h2 className="mt-20 text-4xl font-black uppercase leading-none">
-                {project.title}
+                {experience.role}
               </h2>
               <p className="mt-5 text-sm leading-6 text-[var(--ink-soft)] group-hover:text-[#d6d0c2]">
-                {project.description}
+                {experience.summary}
               </p>
             </Link>
           ))}
@@ -96,11 +97,11 @@ export default function Home() {
 
       <section className="mx-auto max-w-7xl px-5 py-16">
         <SectionHeading
-          eyebrow="Latest Notes"
-          title="Build logs as proof of work."
+          eyebrow="Research / IP"
+          title="Published research and patent evidence."
         >
-          The blog will document decisions, architecture, deployment, and AI
-          experiments so recruiters can see how the system grows.
+          Academic and invention outputs aligned with machine learning,
+          analytics, IoT, and applied systems.
         </SectionHeading>
         <div className="mt-10 grid border-t border-[#111310]">
           {posts.map((post) => (

@@ -1,6 +1,6 @@
 # YuStack
 
-YuStack is a personal technical platform for software, AI, cloud, data, and interactive systems work.
+YuStack is Evan Huang's personal portfolio for IT support, data analytics, AIGC workflows, game systems, full-stack engineering, and interactive content.
 
 Phase 1 focuses on shipping a clean portfolio foundation with:
 
@@ -53,8 +53,9 @@ npm run build
 ## Current Pages
 
 - `/` - Home
+- `/experience` - LinkedIn-aligned work experience
 - `/projects` - Project portfolio
-- `/blog` - Technical writing index
+- `/blog` - Research and patent evidence
 - `/roadmap` - Build plan and delivery phases
 - `/about` - Profile and stack summary
 - `/api/health` - Basic service health endpoint
