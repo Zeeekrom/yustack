@@ -3,7 +3,7 @@ import { posts, projects } from "@/lib/site-data";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "http://localhost:3000";
+  "https://yustack.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/projects", "/blog", "/roadmap", "/about"].map(
